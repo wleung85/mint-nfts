@@ -22,6 +22,7 @@ contract MyEpicNFT is ERC721URIStorage {
   string[] firstWords = ["Coarse", "Rough", "Irritating", "Sexual", "Smooth", "Thorough", "Shiny", "Lovely", "Hateful", "Stupid", "Smart", "Slow", "Everywhere", "Quick", "Slow"];
   string[] secondWords = ["Sand", "Anakin", "Obi-Wan", "Gold", "Red", "Blue", "Yellow", "Darth", "Leia", "Han", "Emperor", "Luke", "Jyn", "Lando", "Boba", "Jango", "Kylo"];
   string[] thirdWords = ["Skywalker", "Sand", "Fett", "Kenobi", "Leader", "Vader", "Sidious", "Organa", "Solo", "Palpatine", "Erso", "Calrissian", "Maul", "Ren", "Malak"];
+  uint256 limit = 50;
   event NewEpicNFTMinted(address sender, uint256 tokenId);
 
   // Pass the name of our NFTs token and its symbol
@@ -58,6 +59,8 @@ contract MyEpicNFT is ERC721URIStorage {
   function makeAnEpicNFT() public {
     // Get the current tokenID, starts at 0
     uint256 newItemId = _tokenIds.current();
+
+    require(newItemId < limit, "Maximum number of NFTs minted reached.");
 
     // Randomly grab one word from each of the three arrays
     string memory first = pickRandomFirstWord(newItemId);
@@ -105,6 +108,10 @@ contract MyEpicNFT is ERC721URIStorage {
     _tokenIds.increment();
 
     emit NewEpicNFTMinted(msg.sender, newItemId);
+  }
+
+  function getCurrMinted() public view returns (uint256) {
+    return _tokenIds.current();
   }
 
 }
