@@ -1,15 +1,20 @@
-# Basic Sample Hardhat Project
+# Mint NFTs
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project explores how to mint NFTs. The NFTs generated from this project create an SVG image with an animated background and a randomly generated name mix of Star Wars characters. The contract limits up to 50 NFTs to be minted.
 
-Try running some of the following tasks:
+To test contract with run script:
+`npx hardhat run scripts/run.js`
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+To deploy contract on Rinkeby:
+`npx hardhat run --network rinkeby scripts/deploy.js`
+
+Project created with buildspace.
+
+What the app looks like with the frontend:
+![Enter Wallet](./img/enter_wallet.PNG)
+
+![Mint NFTs Splash](./img/mint_nft_splash.PNG)
+
+![After minting](./img/finished_minting.PNG)
+
+![NFT preview](./img/minted_nft.PNG)
