@@ -11,10 +11,14 @@ To deploy contract on Rinkeby:
 Project created with buildspace.
 
 What the app looks like with the frontend:
+## Before connecting MetaMask wallet
 ![Enter Wallet](./img/enter_wallet.PNG)
 
+## After connecting MetaMask wallet
 ![Mint NFTs Splash](./img/mint_nft_splash.PNG)
 
+## After minting an NFT
 ![After minting](./img/finished_minting.PNG)
 
+## Minted NFT seen on Rarible
 ![NFT preview](./img/minted_nft.PNG)
